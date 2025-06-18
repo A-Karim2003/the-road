@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "vollkorn", serif;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+:root {
+  --primary-color: #2b81e4;
+  --secondary-color: #eee;
+}
+
+.container {
+  background-color: var(--secondary-color);
+  margin: 3.5rem;
+  box-shadow: 0 1rem 3rem #777;
+}
+
+header {
+  width: 100%;
+  height: calc(100vh - 7rem);
+  background: linear-gradient(rgba(18, 113, 255, 0.5), rgba(18, 113, 255, 0.3)),
+    url("images/header-bg.jpg") center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  perspective: 100rem;
+  overflow: hidden;
+}
+.header-text {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 5px #777;
+}
+
+.header-text h1 {
+  font-size: 8rem;
+  color: white;
+}
+.header-text p {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  max-width: 70rem;
+  margin: auto;
+}
+
+.logo {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+}
+
+.logo h1 {
+  display: flex;
+}
+
+.logo h1 span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  background-color: white;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  animation: drop-letters 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes drop-letters {
+  0%,
+  10%,
+  100% {
+    transform: translateY(0);
+  }
+
+  15% {
+    transform: translateY(-100%);
+  }
+
+  20% {
+    transform: translateY(0);
+  }
+}
+
+.header-image {
+  width: 35%;
+  animation: image-float 5s infinite;
+}
+
+@keyframes image-float {
+  0% {
+    transform: translateZ(0rem);
+    opacity: 1;
+  }
+  40% {
+    transform: translateZ(-500rem) translateX(150rem);
+    opacity: 0.8;
+  }
+  70% {
+    transform: translateZ(-1500rem) translateX(800rem);
+    opacity: 0.6;
+  }
+
+  80% {
+    transform: translateZ(-50rem) translateX(200rem);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateZ(0rem);
+    opacity: 1;
+  }
+}
