@@ -100,7 +100,7 @@ header {
 
 .header-image {
   width: 35%;
-  animation: image-float 5s infinite;
+  animation: image-float 150s infinite;
 }
 
 @keyframes image-float {
@@ -126,4 +126,148 @@ header {
     transform: translateZ(0rem);
     opacity: 1;
   }
+}
+
+/*------------ Popupar tours section------------- */
+
+.popular-tours {
+  padding: 5rem;
+}
+
+.tours-heading {
+  font-size: 8rem;
+  text-align: center;
+  margin-bottom: 8rem;
+  color: var(--primary-color);
+  text-shadow: 0 1px 2px var(--primary-color);
+}
+
+.cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.card {
+  position: relative;
+  perspective: 150rem;
+
+  width: 35rem;
+
+  box-shadow: 0 2rem 4rem #777;
+}
+
+.front-side {
+  border-radius: 4px;
+  overflow: hidden;
+
+  background-color: white;
+
+  position: relative;
+  z-index: 10;
+
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.tour-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  top: 30%;
+  right: 1.5rem;
+  color: white;
+  text-shadow: 0 0 1rem #000;
+}
+
+.card-list {
+  background-color: rgba(244, 248, 252, 0.348);
+  width: 80%;
+  margin: auto;
+}
+
+.card-list-item {
+  border: none;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #777;
+  border-bottom: 0.1rem solid var(--primary-color);
+}
+
+.card-list-item:last-child {
+  border: none;
+}
+
+.navigation-button {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--light-grey-color);
+  border-radius: 0.3rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+
+/* Styles for the back side */
+
+.back-side {
+  border-radius: 4px;
+  overflow: hidden;
+  position: absolute;
+  background-color: var(--primary-color);
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transform: translateZ(-5rem) translateX(3rem);
+  transition: opacity 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+.tour-price {
+  font-size: 5rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.card-button {
+  padding: 1rem 3rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: white;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+/* eventListners for front and back side */
+
+.card.change .front-side {
+  transform: translateZ(-5rem) translateX(3rem);
+  z-index: 1;
+}
+
+.card.change .back-side {
+  transform: translateZ(0) translateX(0);
+  z-index: 1;
 }
