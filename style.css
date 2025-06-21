@@ -67,11 +67,11 @@ nav {
   height: calc(100vh - 7rem);
   overflow: hidden;
 
-  display: none;
+  visibility: hidden;
 }
 
 nav.active {
-  display: flex;
+  visibility: visible;
 }
 
 nav img {
