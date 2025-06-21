@@ -35,6 +35,114 @@ html {
   }
 }
 
+/* Menu section */
+
+.menu-container {
+  position: fixed;
+  top: 6rem;
+  left: 6rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 50%;
+  z-index: 10;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu {
+  font-size: 2.5rem;
+  color: rgb(70, 70, 70);
+}
+
+/* -----------Nav overlay section ------------*/
+
+nav {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+
+  margin: 3.5rem;
+  height: calc(100vh - 7rem);
+  overflow: hidden;
+}
+
+nav img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  bottom: -100%;
+  transition: bottom 1s ease;
+}
+
+nav.active img {
+  bottom: 0%;
+  transition: bottom 0.4s ease;
+}
+
+/* Links section */
+
+.nav-links {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-links li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  opacity: 0.8;
+}
+.nav-links li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links li:hover {
+  opacity: 1;
+}
+
+nav.active .nav-links li {
+  transform: translateY(0%);
+}
+
+.nav-links li a {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links li:nth-last-of-type(4) {
+  background-color: rgba(100, 148, 237);
+  transition: transform 0.4s ease 0.2s, opacity 0.3s ease;
+}
+
+.nav-links li:nth-last-of-type(3) {
+  background-color: rgb(127, 255, 212);
+  transition: transform 0.4s ease 0.4s, opacity 0.3s ease;
+}
+
+.nav-links li:nth-last-of-type(2) {
+  background-color: rgb(255, 160, 122);
+  transition: transform 0.4s ease 0.6s, opacity 0.3s ease;
+}
+
+.nav-links li:nth-last-of-type(1) {
+  background-color: rgb(175, 238, 238);
+  transition: transform 0.4s ease 0.8s, opacity 0.3s ease;
+}
+
+/* ----------Header section---------------- */
+
 header {
   width: 100%;
   height: calc(100vh - 7rem);
@@ -508,4 +616,39 @@ textarea {
 .contact-section,
 .form-btn {
   animation: animated-bg 35s infinite;
+}
+
+footer {
+  background-color: #777;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+footer ul {
+  max-width: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer ul li {
+  background-color: #777;
+  padding: 0.3rem 3rem;
+  transition: all 0.2s;
+}
+
+footer ul a {
+  letter-spacing: 0.3rem;
+  font-size: 2rem;
+  color: white;
+}
+
+footer ul li:hover {
+  transform: rotate(-10deg);
+  box-shadow: 5px 10px 10px black;
 }

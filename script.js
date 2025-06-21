@@ -61,3 +61,28 @@ inputGroups.addEventListener("click", (e) => {
     });
   }
 });
+
+// nav section
+
+const menu = document.querySelector(".menu-container");
+const nav = document.querySelector("nav");
+const navLinks = document.querySelectorAll(".nav-links li");
+const hamburgerMenu = document.querySelector(".menu");
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("active");
+
+  if (nav.classList.contains("active")) {
+    hamburgerMenu.classList.remove("fa-bars");
+    hamburgerMenu.classList.add("fa-x");
+  } else {
+    hamburgerMenu.classList.remove("fa-x");
+    hamburgerMenu.classList.add("fa-bars");
+  }
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+});
